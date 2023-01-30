@@ -15,6 +15,9 @@ public class Prodotto {
 		this.nome = nome;
 		this.marca = marca;
 		this.prezzo = prezzo;
+		
+		this.iva = (this.prezzo * 22) /100;
+		
 	}
 
 	public int getCodice() {
@@ -56,8 +59,8 @@ public class Prodotto {
 
 	}
 
-	public int getIva() {
-		return iva;
+	public double getIva() {
+		return this.iva;
 	}
 
 	double prezzoSenzaIva() {
@@ -65,7 +68,7 @@ public class Prodotto {
 	}
 
 	double prezzoConIva() {
-		return (this.prezzo * this.iva) / 2;
+		return this.prezzo +  this.iva;
 	}
 
 	@Override
