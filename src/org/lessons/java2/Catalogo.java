@@ -12,6 +12,32 @@ public class Catalogo {
 
 		String scelta = s.nextLine();
 
+		if (scelta.equals("telefono")) {
+
+			System.out.println("Inserisci nome");
+
+			String nome = s.nextLine();
+
+			System.out.println("Inserisci marca");
+
+			String marca = s.nextLine();
+
+			System.out.println("Inserisci prezzo");
+
+			int prezzo = s.nextInt();
+
+			System.out.println("Inserisci Imei");
+
+			int imei = s.nextInt();
+
+			System.out.println("Inserisci memoria");
+
+			int memoria = s.nextInt();
+
+			Telefoni telefono = new Telefoni(nome, marca, prezzo, imei, memoria);
+
+		}
+
 	}
 
 }

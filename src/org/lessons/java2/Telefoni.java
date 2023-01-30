@@ -6,11 +6,26 @@ public class Telefoni extends Prodotto {
 
 	int memoria;
 
-	public Telefoni(int codice, String nome, String marca, int prezzo, int iva, int codiceImei, int memoria) {
-		super(codice, nome, marca, prezzo, iva);
+	public Telefoni(String nome, String marca, int prezzo, int codiceImei, int memoria) {
+		super(nome, marca, prezzo);
 		this.codiceImei = codiceImei;
 		this.memoria = memoria;
 	}
-	
+
+	public int getCodiceImei() {
+		return codiceImei;
+	}
+
+	public void setCodiceImei(int codiceImei) {
+		this.codiceImei = codiceImei;
+	}
+
+	public int getMemoria() {
+		return memoria;
+	}
+
+	public void setMemoria(int memoria) {
+		this.memoria = memoria;
+	}
 
 }

@@ -1,25 +1,26 @@
 package org.lessons.java2;
 
+import java.util.Random;
+
 public class Prodotto {
 
 	private int codice;
 	String nome;
 	String marca;
 	int prezzo;
-    int iva;
-	
-	
-	public Prodotto(int codice, String nome, String marca, int prezzo, int iva) {
+	int iva;
+
+	public Prodotto(String nome, String marca, int prezzo) {
 		super();
-		this.codice = codice;
 		this.nome = nome;
 		this.marca = marca;
 		this.prezzo = prezzo;
-		this.iva = iva;
 	}
-	
+
 	public int getCodice() {
-		return codice;
+		Random n = new Random(1000);
+		int numeroCodice = n.nextInt();
+		return this.codice = numeroCodice;
 	}
 
 	public String getNome() {
@@ -30,7 +31,7 @@ public class Prodotto {
 		if (this.nome != "") {
 			this.nome = nome;
 		}
-		
+
 	}
 
 	public String getMarca() {
@@ -48,22 +49,29 @@ public class Prodotto {
 	}
 
 	public void setPrezzo(int prezzo) {
-		
+
 		if (this.prezzo > 0) {
 			this.prezzo = prezzo;
 		}
-		
+
 	}
 
 	public int getIva() {
 		return iva;
 	}
 
-	double prezzoSenzaIva () {
+	double prezzoSenzaIva() {
 		return this.prezzo;
 	}
+
 	double prezzoConIva() {
-		return (this.prezzo * this.iva) /2;
+		return (this.prezzo * this.iva) / 2;
 	}
-	
+
+	@Override
+	public String toString() {
+		return " Codice Prodotto: " + codice + " Nome: " + nome + " Marca: " + marca + " Prezzo con Iva: "
+				+ prezzoConIva() + " euro";
+
+	}
 }
