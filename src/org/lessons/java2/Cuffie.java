@@ -2,8 +2,8 @@ package org.lessons.java2;
 
 public class Cuffie extends Prodotto {
 
-	String colore;
-	boolean isWireless = true;
+	 private String colore;
+	 private boolean isWireless = true;
 
 	public Cuffie(String nome, String marca, int prezzo, String colore, boolean isWireless) {
 		super(nome, marca, prezzo);
@@ -26,5 +26,7 @@ public class Cuffie extends Prodotto {
 	public void setWireless(boolean isWireless) {
 		this.isWireless = isWireless;
 	}
+
+	
 
 }

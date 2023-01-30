@@ -5,69 +5,88 @@ import java.util.Scanner;
 public class Catalogo {
 
 	public static void main(String[] args) {
-		
-		///Prodotto[] prodotti = new Prodotto[]; // da implementare con richiesta ad utente;
+		String scelta = "";
+
+		int contatore = 0;
+
+		int n = 10;
+
+		Prodotto[] prodotti = new Prodotto[n];
 
 		Scanner s = new Scanner(System.in);
 
-		System.out.println("Vuoi inserire un telefono, cuffie o televisori?");
+		while (contatore <= n ) {
 
-		String scelta = s.nextLine();
+			System.out.println("Vuoi inserire un telefono, cuffie o televisori? ");
 
-		if (scelta.equals("telefono")) {
-
-			System.out.println("Inserisci nome");
-
-			String nome = s.nextLine();
-
-			System.out.println("Inserisci marca");
-
-			String marca = s.nextLine();
-
-			System.out.println("Inserisci prezzo");
-
-			int prezzo = s.nextInt();
-
-			System.out.println("Inserisci Imei");
-
-			int imei = s.nextInt();
-
-			System.out.println("Inserisci memoria");
-
-			int memoria = s.nextInt();
-
-			Telefoni telefono = new Telefoni(nome,marca,prezzo,imei,memoria);
+			scelta = s.nextLine();
 			
-			System.out.println("ecco il telefono" + telefono);
+			s.nextLine();
 
-		}else if (scelta.equals("cuffie")){
-			
-			System.out.println("Inserisci nome");
+			if (scelta.equals("telefono")) {
 
-			String nome = s.nextLine();
+				System.out.println("Inserisci nome");
 
-			System.out.println("Inserisci marca");
+				String nome = s.nextLine();
 
-			String marca = s.nextLine();
+				System.out.println("Inserisci marca");
 
-			System.out.println("Inserisci prezzo");
+				String marca = s.nextLine();
 
-			int prezzo = s.nextInt();
+				System.out.println("Inserisci prezzo");
 
-			System.out.println("Inserisci colore");
+				int prezzo = s.nextInt();
 
-			String colore = s.nextLine();
-			
-			System.out.println("è wireless?");
-			
-			boolean b = s.nextBoolean();
+				System.out.println("Inserisci Imei");
 
-			Cuffie c = new Cuffie(nome,marca,prezzo,colore,b);
-			
-			System.out.println("ecco il telefono" + c);
-			
+				int imei = s.nextInt();
+
+				System.out.println("Inserisci memoria");
+
+				int memoria = s.nextInt();
+
+				Telefoni telefono = new Telefoni(nome, marca, prezzo, imei, memoria);
+
+				System.out.println("ecco il telefono" + telefono);
+
+				contatore++;
+
+			} else if (scelta.equals("cuffie")) {
+
+				System.out.println("Inserisci nome");
+
+				String nome = s.nextLine();
+
+				System.out.println("Inserisci marca");
+
+				String marca = s.nextLine();
+
+				System.out.println("Inserisci prezzo");
+
+				int prezzo = s.nextInt();
+
+				System.out.println("Inserisci colore");
+
+				String colore = s.nextLine();
+
+				System.out.println("è wireless?");
+
+				boolean b = s.nextBoolean();
+
+				Cuffie c = new Cuffie(nome, marca, prezzo, colore, b);
+
+				System.out.println("ecco il telefono" + c);
+
+				contatore++;
+			}
+
+		}
+		System.out.println("Prodotti:");
+		for (int i = 0; i <= contatore; i++) {
+			System.out.println(prodotti[i].toString()); // metodo da rivedere.
 		}
 
+		s.close();
 	}
 
 }
